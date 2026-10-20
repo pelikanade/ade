@@ -11,6 +11,7 @@ Expo + React Native app scaffolded with [React Native Reusables](https://reactna
 - React Native Reusables (shadcn-style components, `@rn-primitives`)
 - Zod
 - TanStack Query
+- Zustand for local state
 - ESLint 10 with `typescript-eslint` strict, `@eslint-react` strict TypeScript, React Hooks, and a local `no-comments` rule
 
 ## Development environment
@@ -18,6 +19,7 @@ Expo + React Native app scaffolded with [React Native Reusables](https://reactna
 Runtime versions are pinned with [devenv](https://devenv.sh): Bun 1.4.2, Node.js 24, Chromium, `agent-browser`, and Puppeteer.
 direnv activates the shell automatically where installed. Both browser tools point at the pinned Nix Chromium via
 `AGENT_BROWSER_EXECUTABLE_PATH` and `PUPPETEER_EXECUTABLE_PATH`, so no browser is downloaded.
+Workspace installs use Bun's hoisted linker (`bunfig.toml`) to keep Expo native modules deduplicated.
 
 ```sh
 devenv shell       # or: direnv allow .
