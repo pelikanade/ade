@@ -47,6 +47,8 @@ Revisit at bootstrap: the memory backend for other users, other input channels, 
 - **Autonomous commits.** Commit completed, passing work at appropriate logical boundaries without waiting for an explicit request.
 - **Native dependencies go through devenv.** When a task needs a native tool, system library or toolchain, follow the devenv skill in this repo and declare it in the devenv config. Don't install it globally or by hand, and don't assume it is already on the machine.
 - **Pre-commit checks.** Every commit passes the repo's pre-commit hooks. Never skip them with `--no-verify` or disable a hook to get a commit through; fix the cause.
+- **Mature dependencies.** Prefer widely used, mature libraries and tools over writing your own. Don't reinvent the wheel.
+- **Tests from real problems.** Every new test must target a problem that has actually occurred in real use. Don't add speculative tests.
 
 ## Open
 
