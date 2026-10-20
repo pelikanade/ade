@@ -26,6 +26,7 @@ Product shape:
 - **App:** React Native with Expo Router.
 - **Styling and components:** Uniwind plus React Native Reusables, using Reusables' Uniwind component source.
 - **State:** zustand for local state; TanStack Query for server state.
+- **Testing:** E2E tests run through `agent-browser`.
 - **Formatting:** Prettier, executed with Bun.
 - **Lint:** ESLint with `tseslint.configs.strict`.
 
