@@ -39,6 +39,9 @@ pre-commit hook formats staged files with Prettier (via Bun), fixes and checks t
 formats Nix files, and runs the full TypeScript check. Run all hooks manually with
 `prek run --all-files`.
 
+`devenv up nowledge-mem` starts and streams logs from the existing `nowledge-mem` Podman container;
+readiness is checked at `http://127.0.0.1:14242/livez`. The container must already exist.
+
 ## Project layout
 
 - `apps/app/` — Expo app workspace

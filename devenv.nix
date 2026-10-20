@@ -8,12 +8,25 @@
     pkgs.direnv
     pkgs.git
     pkgs.nodejs
+    pkgs.podman
   ];
 
   env.AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.chromium;
   env.EXPO_NO_TELEMETRY = "1";
   env.PUPPETEER_EXECUTABLE_PATH = lib.getExe pkgs.chromium;
   env.PUPPETEER_SKIP_DOWNLOAD = "1";
+
+  processes."nowledge-mem" = {
+    exec = ''
+      if ! ${lib.getExe pkgs.podman} container exists nowledge-mem; then
+        echo "Nowledge Mem container 'nowledge-mem' not found" >&2
+        exit 1
+      fi
+      ${lib.getExe pkgs.podman} start nowledge-mem >/dev/null
+      ${lib.getExe pkgs.podman} logs -f nowledge-mem
+    '';
+    ready.exec = "${lib.getExe pkgs.curl} -fsS http://127.0.0.1:14242/livez";
+  };
 
   git-hooks.hooks = {
     nixfmt.enable = true;
