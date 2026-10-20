@@ -44,6 +44,7 @@ Revisit at bootstrap: the memory backend for other users, other input channels, 
 ## Basic rules
 
 - **Atomic commits.** Each commit is one logical change that builds and passes its checks on its own. Don't mix refactors, formatting and behavior changes in one commit; split them.
+- **Autonomous commits.** Commit completed, passing work at appropriate logical boundaries without waiting for an explicit request.
 - **Native dependencies go through devenv.** When a task needs a native tool, system library or toolchain, follow the devenv skill in this repo and declare it in the devenv config. Don't install it globally or by hand, and don't assume it is already on the machine.
 - **Pre-commit checks.** Every commit passes the repo's pre-commit hooks. Never skip them with `--no-verify` or disable a hook to get a commit through; fix the cause.
 
