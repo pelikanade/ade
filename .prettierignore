@@ -1,0 +1,15 @@
+node_modules/
+.devenv/
+.direnv/
+.expo/
+dist/
+dist-native/
+web-build/
+coverage/
+.agents/
+.prettierignore
+bun.lock
+devenv.lock
+expo-env.d.ts
+uniwind-types.d.ts
+assets/
