@@ -34,21 +34,21 @@ const noCommentsPlugin = {
 export default tseslint.config(
   {
     ignores: [
-      'node_modules/**',
+      '**/node_modules/**',
       '.devenv/**',
       '.direnv/**',
-      '.expo/**',
-      'dist/**',
-      'dist-native/**',
-      'expo-env.d.ts',
-      'uniwind-types.d.ts',
+      '**/.expo/**',
+      '**/dist/**',
+      '**/dist-native/**',
+      '**/expo-env.d.ts',
+      '**/uniwind-types.d.ts',
     ],
   },
   tseslint.configs.strict,
   eslintReact.configs['strict-typescript'],
   reactHooks.configs.flat['recommended-latest'],
   {
-    files: ['app/**/*.{ts,tsx}', 'metro.config.js'],
+    files: ['apps/app/**/*.{ts,tsx}', 'apps/app/metro.config.js'],
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
     },

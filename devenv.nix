@@ -25,8 +25,8 @@
       files = "\\.(?:[cm]?[jt]sx?|json|css|md|ya?ml)$|(?:^|/)\\.prettierrc$";
       excludes = [
         "^\\.agents/"
-        "^expo-env\\.d\\.ts$"
-        "^uniwind-types\\.d\\.ts$"
+        "(^|/)expo-env\\.d\\.ts$"
+        "(^|/)uniwind-types\\.d\\.ts$"
       ];
     };
 
@@ -36,8 +36,8 @@
       entry = "${lib.getExe pkgs.bun} x eslint --fix --max-warnings=0 --no-warn-ignored";
       files = "\\.(?:[cm]?[jt]sx?)$";
       excludes = [
-        "^expo-env\\.d\\.ts$"
-        "^uniwind-types\\.d\\.ts$"
+        "(^|/)expo-env\\.d\\.ts$"
+        "(^|/)uniwind-types\\.d\\.ts$"
       ];
     };
 

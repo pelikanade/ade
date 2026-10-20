@@ -4,6 +4,20 @@
   "workspaces": {
     "": {
       "name": "ade",
+      "devDependencies": {
+        "@eslint-react/eslint-plugin": "^5.28.3",
+        "eslint": "^10.13.0",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "prettier": "^3.8.3",
+        "prettier-plugin-tailwindcss": "^0.8.0",
+        "puppeteer": "^25.15.0",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.72.0",
+      },
+    },
+    "apps/app": {
+      "name": "@ade/app",
+      "version": "1.0.0",
       "dependencies": {
         "@rn-primitives/accordion": "^1.5.2",
         "@rn-primitives/alert-dialog": "^1.5.2",
@@ -62,15 +76,8 @@
       },
       "devDependencies": {
         "@babel/core": "^7.26.0",
-        "@eslint-react/eslint-plugin": "^5.28.3",
         "@types/react": "~19.2.10",
-        "eslint": "^10.13.0",
-        "eslint-plugin-react-hooks": "^7.1.1",
-        "prettier": "^3.8.3",
-        "prettier-plugin-tailwindcss": "^0.8.0",
-        "puppeteer": "^25.15.0",
-        "typescript": "~6.0.3",
-        "typescript-eslint": "^8.72.0",
+        "babel-preset-expo": "~57.0.0",
       },
     },
   },
@@ -78,6 +85,8 @@
     "react-native-screens": "~4.26.0",
   },
   "packages": {
+    "@ade/app": ["@ade/app@workspace:apps/app"],
+
     "@babel/code-frame": ["@babel/code-frame@7.29.7", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.29.7", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw=="],
 
     "@babel/compat-data": ["@babel/compat-data@7.29.7", "", {}, "sha512-locTkQyKvwIEgBzVrn8693ebc97F2U8ZHjbXwDXJ5Fn2TCpNwTlKcaKLkdHop5c/icOFE7qt7Q9JC5hnKNa6Gg=="],

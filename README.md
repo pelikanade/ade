@@ -6,6 +6,7 @@ Expo + React Native app scaffolded with [React Native Reusables](https://reactna
 
 - Expo SDK 57, React Native 0.86, Expo Router
 - React 19
+- Bun workspace monorepo
 - Tailwind CSS 4 via Uniwind (no Babel preset)
 - React Native Reusables (shadcn-style components, `@rn-primitives`)
 - Zod
@@ -38,15 +39,17 @@ formats Nix files, and runs the full TypeScript check. Run all hooks manually wi
 
 ## Project layout
 
-- `app/` — Expo Router routes; `_layout.tsx` owns providers (Uniwind theme, navigation, TanStack Query, portal host)
-- `components/ui/` — Reusables components
-- `global.css` — Tailwind 4 theme tokens consumed by Uniwind
-- `lib/query-client.ts` — shared `QueryClient`
+- `apps/app/` — Expo app workspace
+- `apps/app/app/` — Expo Router routes; `_layout.tsx` owns providers (Uniwind theme, navigation, TanStack Query, portal host)
+- `apps/app/components/ui/` — Reusables components
+- `apps/app/global.css` — Tailwind 4 theme tokens consumed by Uniwind
+- `apps/app/lib/query-client.ts` — shared `QueryClient`
 - `eslint.config.mjs` — flat config plus the inline `local/no-comments` rule
 - `.agents/skills/devenv/SKILL.md` — devenv workflow reference
 
 Add more components with:
 
 ```sh
+cd apps/app
 bunx @react-native-reusables/cli@latest add [components]
 ```
